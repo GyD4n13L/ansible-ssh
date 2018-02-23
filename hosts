@@ -1,7 +1,65 @@
-server1 ansible_host=192.168.0.104 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u100 ansible_host=192.168.0.100 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u101 ansible_host=192.168.0.101 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u102 ansible_host=192.168.0.102 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u103 ansible_host=192.168.0.103 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u104 ansible_host=192.168.0.104 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u105 ansible_host=192.168.0.105 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u106 ansible_host=192.168.0.106 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u107 ansible_host=192.168.0.107 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u108 ansible_host=192.168.0.108 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u109 ansible_host=192.168.0.109 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u110 ansible_host=192.168.0.110 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u111 ansible_host=192.168.0.111 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u112 ansible_host=192.168.0.112 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u113 ansible_host=192.168.0.113 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u114 ansible_host=192.168.0.114 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u115 ansible_host=192.168.0.115 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u116 ansible_host=192.168.0.116 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u117 ansible_host=192.168.0.117 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u118 ansible_host=192.168.0.118 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u119 ansible_host=192.168.0.119 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u120 ansible_host=192.168.0.120 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u121 ansible_host=192.168.0.121 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u122 ansible_host=192.168.0.122 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u123 ansible_host=192.168.0.123 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u124 ansible_host=192.168.0.124 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u125 ansible_host=192.168.0.125 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u126 ansible_host=192.168.0.126 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u127 ansible_host=192.168.0.127 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u128 ansible_host=192.168.0.128 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u129 ansible_host=192.168.0.129 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+u130 ansible_host=192.168.0.130 ansible_port=22 ansible_connection=ssh ansible_python_interpreter=/usr/bin/python3
+
+
 
 [all]
-server1
-
-
-
+u101
+u102
+u103
+u104
+u105
+u106
+u107
+u108
+u109
+u110
+u111
+u112
+u113
+u114
+u115
+u115
+u117
+u118
+u119
+u120
+u121
+u122
+u123
+u124
+u125
+u126
+u127
+u128
+u129
+u130
