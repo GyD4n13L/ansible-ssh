@@ -1,0 +1,62 @@
+---
+# This playbook refreshes local SSH key fingerprints. Useful when using Vagrant.
+#
+# To run the playbook on your localhost:
+#   ansible-playbook main.yml
+# Or to avoid any warnings:
+#   ansible-playbook -i localhost.ini main.yml
+#
+# NOTE: this should be used only in a trusted local environment. Otherwise you
+# may be making yourself vulnerable to MitM attacks.
+#
+- hosts: localhost
+  gather_facts: no
+  vars:
+    known_hosts_file: "~/.ssh/known_hosts"
+    # Only hosts in this range will be updated:
+    target_subnet: "192.168.0."
+    host_start: 100
+    host_end: 110
+  tasks:
+    - name: Check if the known hosts file exists
+      file: "path={{ known_hosts_file }} state=file"
+      # Save the task output/report/log to a register
+      register: file_check
+      # We ignore errors here because we'll handle them in the next task
+      ignore_errors: true
+
+    - name: Create the known hosts file when not found
+      file: "path={{ known_hosts_file }} state=touch"
+      # Use Jinja2 template filters to check if the field 'failed' exists
+      when: file_check | failed
+
+      # Don't Repeat Yourself. Save the target hosts list to a register
+    - name: Dummy task to build list of nodes for ssh fingerprint
+      assert: { that: "'a' == 'a'" }
+      # create a custom sequence and save it to register target_hosts
+      with_sequence:
+        start={{host_start}}
+        end={{host_end}}
+        format={{target_subnet}}%i
+      register: target_hosts
+
+    - name: Remove SSH fingerprints if they exist
+      known_hosts:
+        state=absent
+        path="{{known_hosts_file}}"
+        host="{{item}}"
+        # Preprocess data in register, using Jinja2 templates, in order to allow
+        # easy access via {{item}} instead of {{item.item}}
+      with_items: "{{ target_hosts.results | map(attribute='item') | list }}"
+
+    - name: Add SSH fingerprints if the node is online
+      # This task makes use of the lookup module which allows accessing data from
+      # outside sources. In particular it uses the pipe lookup which returns the
+      # raw output of the specified ssh-keyscan command.
+      known_hosts:
+        state=present
+        path="{{known_hosts_file}}"
+        host="{{item}}"
+        key="{{ lookup('pipe', 'ssh-keyscan -H -T 1 {{item}}') }}"
+      with_items: "{{ target_hosts.results | map(attribute='item') | list }}"
+      ignore_errors: yes
