@@ -33,33 +33,4 @@ u130 ansible_host=192.168.0.130 ansible_port=22 ansible_connection=ssh ansible_p
 
 
 [all]
-u101
-u102
-u103
-u104
-u105
-u106
-u107
-u108
-u109
-u110
-u111
-u112
-u113
-u114
-u115
-u115
-u117
-u118
-u119
-u120
-u121
-u122
-u123
-u124
-u125
-u126
-u127
-u128
-u129
-u130
+u[100:130]
