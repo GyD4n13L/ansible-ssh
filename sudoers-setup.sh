@@ -1,2 +1,2 @@
 #!/bin/bash
-ansible-playbook -i hosts -become --ask-become-pass ansible-passwordless-sudo.yml
+ansible-playbook --become -i hosts  ansible-passwordless-sudo.yml -K
